@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome - Math Pose Dance</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #f0f0f0;
+      }
+
+      .guide-container {
+        width: 100%;
+        max-width: 900px;
+        padding: 40px 20px;
+        background: rgba(20, 20, 30, 0.9);
+        box-shadow: 0 8px 25px rgba(0, 255, 255, 0.2);
+        border-radius: 20px;
+        text-align: center;
+      }
+
+      .guide-container h2 {
+        font-size: 2.5em;
+        color: #00ffe0;
+        margin-bottom: 25px;
+        text-shadow: 1px 1px 3px #000;
+      }
+
+      .guide-container ul {
+        text-align: left;
+        margin: 0 auto 35px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        max-width: 600px;
+        box-shadow: 0 2px 15px rgba(0, 255, 255, 0.1);
+      }
+
+      .guide-container li {
+        margin: 12px 0;
+        font-size: 1.15em;
+        line-height: 1.6;
+      }
+
+      .pose-gallery {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+        margin-bottom: 35px;
+      }
+
+      .pose-item {
+        text-align: center;
+      }
+
+      .pose-item img {
+        width: 160px;
+        height: auto;
+        border-radius: 14px;
+        box-shadow: 0 4px 20px rgba(0, 255, 255, 0.2);
+      }
+
+      .pose-item p {
+        margin-top: 10px;
+        font-size: 1em;
+        font-weight: 600;
+        color: #00ffe0;
+      }
+
+      .guide-btn {
+        padding: 14px 35px;
+        font-size: 1.1em;
+        background-color: transparent;
+        color: #0ff;
+        border: 2px solid #0ff;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+      }
+
+      .guide-btn:hover {
+        background-color: #0ff;
+        color: #000;
+        transform: scale(1.05);
+      }
+
+      #welcome-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+        background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      }
+
+      #welcome-container h1 {
+        font-size: 2.5em;
+        color: #00ffe0;
+        text-shadow: 1px 1px 3px #000;
+      }
+
+      #welcome-container h2 {
+        font-size: 2em;
+        color: #7c3aed;
+        margin-bottom: 30px;
+        text-shadow: 1px 1px 3px #000;
+      }
+
+      .start-btn {
+        padding: 15px 40px;
+        font-size: 1.2em;
+        background-color: transparent;
+        color: #0ff;
+        border: 2px solid #0ff;
+        border-radius: 12px;
+        cursor: pointer;
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+
+      .start-btn:hover {
+        background-color: #0ff;
+        color: #000;
+        transform: scale(1.05);
+      }
+
+      #note {
+        font-weight: bold;
+        color: #00ffe0;
+        margin-bottom: 15px;
+      }
+    </style>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const audio = document.getElementById("auto-backsound");
+
+        // Coba play saat DOM siap
+        audio.volume = 0.3;
+        audio.play().catch(() => {
+          // Kalau gagal autoplay, tunggu interaksi user pertama
+          window.addEventListener(
+            "click",
+            () => {
+              audio.play();
+            },
+            { once: true }
+          );
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <audio
+      id="auto-backsound"
+      src="sounds/backsounds.mp3"
+      autoplay
+      loop
+    ></audio>
+
+    <div
+      class="welcome-container"
+      style="
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      "
+    >
+      <h1
+        style="
+          font-size: 2.7em;
+          color: #00ffe0;
+          text-shadow: 0 0 12px #0ff, 0 0 24px #7c3aed;
+        "
+      >
+        Selamat Datang di
+      </h1>
+      <img
+        src="images/logo.png"
+        alt="Logo Math Pose Dance"
+        style="
+          width: 600px;
+          max-width: 90vw;
+          height: auto;
+          object-fit: contain;
+          background: none;
+
+          margin: 0px 0 28px 0;
+          border: none;
+          padding: 0;
+          display: block;
+        "
+      />
+      <a href="guide.html" style="text-decoration: none">
+        <button
+          class="start-btn"
+          style="
+            padding: 26px 80px;
+            font-size: 2.1em;
+            background: linear-gradient(90deg, #00ffe0 0%, #012263 100%);
+            color: #fff;
+            border: none;
+            border-radius: 22px;
+            box-shadow: 0 8px 32px #00ffe055, 0 2px 8px #012263 100%,
+              0 0 18px #0ff88;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: background 0.3s, color 0.3s, transform 0.2s,
+              box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+          "
+          onmouseover="this.style.background='linear-gradient(90deg, , #012263 100%,#7c3aed 0%)';this.style.color='#000';this.style.transform='scale(1.09)';this.style.boxShadow='0 0 40px #7c3aed88, 0 0 24px #012263 100%';"
+          onmouseout="this.style.background='linear-gradient(90deg, #012263 100%,#00ffe0 0%, )';this.style.color='#fff';this.style.transform='scale(1)';this.style.boxShadow='0 8px 32px #00ffe055, 0 2px 8px #7c3aed55, 0 0 18px #012263 100%';"
+        >
+          <span style="filter: drop-shadow(0 0 8px #0ff)">🕺</span> Mulai Main!💃
+        </button>
+      </a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Petunjuk - Math Pose Dance</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #f0f0f0;
+      }
+
+      .guide-container {
+        width: 100%;
+        max-width: 900px;
+        padding: 40px 20px;
+        background: rgba(20, 20, 30, 0.9);
+        box-shadow: 0 8px 25px rgba(0, 255, 255, 0.2);
+        border-radius: 20px;
+        text-align: center;
+      }
+
+      .guide-container h2 {
+        font-size: 2.5em;
+        color: #00ffe0;
+        margin-bottom: 25px;
+        text-shadow: 1px 1px 3px #000;
+      }
+
+      .guide-container ul {
+        text-align: left;
+        margin: 0 auto 35px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 12px;
+        max-width: 600px;
+        box-shadow: 0 2px 15px rgba(0, 255, 255, 0.1);
+      }
+
+      .guide-container li {
+        margin: 12px 0;
+        font-size: 1.15em;
+        line-height: 1.6;
+      }
+
+      .pose-gallery {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+        margin-bottom: 35px;
+      }
+
+      .pose-item {
+        text-align: center;
+      }
+
+      .pose-item img {
+        width: 160px;
+        height: auto;
+        border-radius: 14px;
+        box-shadow: 0 4px 20px rgba(0, 255, 255, 0.2);
+      }
+
+      .pose-item p {
+        margin-top: 10px;
+        font-size: 1em;
+        font-weight: 600;
+        color: #00ffe0;
+      }
+
+      .guide-btn {
+        padding: 14px 35px;
+        font-size: 1.1em;
+        background-color: transparent;
+        color: #0ff;
+        border: 2px solid #0ff;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+      }
+
+      .guide-btn:hover {
+        background-color: #0ff;
+        color: #000;
+        transform: scale(1.05);
+      }
+
+      #note {
+        font-weight: bold;
+        color: #00ffe0;
+        margin-bottom: 15px;
+      }
+    </style>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const audio = document.getElementById("auto-backsound");
+
+        // Coba play saat DOM siap
+        audio.volume = 0.2;
+        audio.play().catch(() => {
+          // Kalau gagal autoplay, tunggu interaksi user pertama
+          window.addEventListener(
+            "click",
+            () => {
+              audio.play();
+            },
+            { once: true }
+          );
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <audio
+      id="auto-backsound"
+      src="sounds/backsounds.mp3"
+      autoplay
+      loop
+    ></audio>
+
+    <div class="guide-container">
+      <h2>Cara Bermain</h2>
+      <ul>
+        <li id="note">📸 Pastikan kamera menyala</li>
+        <li id="note">👆 Pose "Atas" = Pilih A</li>
+        <li id="note">👉 Pose "Kanan" = Pilih B</li>
+        <li id="note">👈 Pose "Kiri" = Pilih C</li>
+        <li id="note">
+          🎯 Kamu punya waktu <strong>2 Menit </strong> untuk menjawab sebanyak
+          mungkin
+        </li>
+      </ul>
+
+      <!-- Ilustrasi pose -->
+      <div class="pose-gallery">
+        <div class="pose-item">
+          <img src="images/pose-atas.png" alt="Pose Atas" />
+          <p>Pose Atas (A)</p>
+        </div>
+        <div class="pose-item">
+          <img src="images/pose-kanan.png" alt="Pose Kanan" />
+          <p>Pose Kanan (B)</p>
+        </div>
+        <div class="pose-item">
+          <img src="images/pose-kiri.png" alt="Pose Kiri" />
+          <p>Pose Kiri (C)</p>
+        </div>
+      </div>
+
+      <a href="game.html"><button class="guide-btn">Lanjut ke Game</button></a>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+/* style-cyberpunk.css */
+
+body {
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: #ffffff;
+  font-family: "Orbitron", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+h1,
+h2,
+h3 {
+  color: #00ffe7;
+  text-shadow: 0 0 5px #00ffe7, 0 0 10px #00ffe7;
+}
+
+button,
+.btn {
+  background-color: #ff0080;
+  color: white;
+  border: 2px solid #ff0080;
+  border-radius: 12px;
+  padding: 12px 28px;
+  font-size: 1em;
+  font-weight: bold;
+  box-shadow: 0 0 10px #ff0080, 0 0 20px #ff0080;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover,
+.btn:hover {
+  background-color: #00ffe7;
+  border-color: #00ffe7;
+  box-shadow: 0 0 15px #00ffe7, 0 0 30px #00ffe7;
+  color: #0f0c29;
+}
+
+ul#choices li {
+  list-style: none;
+  margin: 15px auto;
+  background-color: #1a1a2e;
+  padding: 15px 25px;
+  border-radius: 10px;
+  color: #00ffe7;
+  font-size: 1.3em;
+  max-width: 600px;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+ul#choices li:hover {
+  transform: scale(1.05);
+  background-color: #16213e;
+}
+
+#timer,
+#status,
+#score,
+#final-score {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #f8f8f2;
+  margin: 10px 0;
+}
+
+.game-box,
+.guide-container {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid #ff0080;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 800px;
+  box-shadow: 0 0 15px #ff0080, 0 0 25px #00ffe7;
+}
+
+#webcam {
+  border-radius: 12px;
+  box-shadow: 0 0 10px #00ffe7;
+  border: 2px solid #ff0080;
+}
+
+#pose-label {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #ff0080;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 10px;
+  box-shadow: 0 0 8px #00ffe7;
+}
+
+.back-button {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  text-decoration: none;
+  background-color: #ff0080;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 0 10px #ff0080;
+}
+
+.back-button:hover {
+  background-color: #00ffe7;
+  color: #0f0c29;
+  box-shadow: 0 0 15px #00ffe7;
+}
